@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amazonfindins</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="topbar">
+    <a class="brand" href="index.html">
+        <img id="siteLogo" class="brand-logo hidden" alt="Website logo">
+        <span id="siteName">amazonfindins</span>
+    </a>
+</header>
+
+<main>
+    <section class="hero">
+        <div>
+            <p class="eyebrow">Fresh affiliate picks</p>
+            <h1 id="heroTitle">Find useful products faster</h1>
+            <p>Browse curated products, compare prices, and jump straight to the best affiliate offer.</p>
+        </div>
+    </section>
+
+    <section class="catalog">
+        <div class="section-title-row">
+            <h2>Latest Products</h2>
+            <span id="userProductCount" class="pill">0 products</span>
+        </div>
+
+        <div class="filters">
+            <input id="search" type="search" placeholder="Search by name or category">
+            <input id="minPrice" type="number" min="0" step="0.01" placeholder="Min price">
+            <input id="maxPrice" type="number" min="0" step="0.01" placeholder="Max price">
+            <button id="clearFilters" class="secondary-button" type="button">Clear</button>
+        </div>
+
+        <p id="statusMessage" class="message"></p>
+        <section id="productDetail" class="product-detail hidden"></section>
+        <div id="productsGrid" class="product-grid"></div>
+    </section>
+</main>
+
+<script src="js/shared.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

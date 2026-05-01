@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - amazonfindins</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="admin-page">
+<header class="topbar">
+    <a class="brand" href="index.html">
+        <img id="adminLogo" class="brand-logo hidden" alt="Website logo">
+        <span id="adminSiteName">amazonfindins</span>
+    </a>
+</header>
+
+<main class="admin-layout">
+    <section id="loginPanel" class="panel login-panel">
+        <h1>Admin Login</h1>
+        <form id="loginForm" class="form-grid">
+            <label>
+                Username
+                <input id="username" type="text"  required>
+            </label>
+            <label>
+                Password
+                <input id="password" type="password"  required>
+            </label>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage" class="message"></p>
+    </section>
+
+    <section id="dashboardPanel" class="hidden dashboard">
+        <div class="dashboard-header">
+            <div>
+                <h1>Product Dashboard</h1>
+                <p>Manage products, images, filters, and website branding.</p>
+            </div>
+            <button id="logoutButton" class="secondary-button" type="button">Logout</button>
+        </div>
+
+        <section class="panel">
+            <h2>Website Settings</h2>
+            <form id="settingsForm" class="form-grid two-columns">
+                <label>
+                    Website name
+                    <input id="websiteName" type="text" required>
+                </label>
+                <label>
+                    Logo image
+                    <input id="logoFile" type="file" accept="image/*">
+                </label>
+                <input id="logoUrl" type="hidden">
+                <button type="submit">Save Settings</button>
+            </form>
+            <p id="settingsMessage" class="message"></p>
+        </section>
+
+        <section class="panel">
+            <h2 id="formTitle">Add Product</h2>
+            <form id="productForm" class="form-grid two-columns">
+                <input id="productId" type="hidden">
+                <label>
+                    Product name
+                    <input id="name" type="text" required>
+                </label>
+                <label>
+                    Category
+                    <input id="category" type="text" required>
+                </label>
+                <label>
+                    Price
+                    <input id="price" type="number" min="0.01" step="0.01" required>
+                </label>
+                <label>
+                    Product image
+                    <input id="imageFile" type="file" accept="image/*">
+                </label>
+                <label class="full-width">
+                    Image URL
+                    <input id="imageUrl" type="text" placeholder="/uploads/example.jpg" >
+                </label>
+                <label class="full-width">
+                    Affiliate link
+                    <input id="affiliateLink" type="url" required>
+                </label>
+                <label class="full-width">
+                    Description
+                    <textarea id="description" rows="4" required></textarea>
+                </label>
+                <div class="button-row full-width">
+                    <button type="submit">Save Product</button>
+                    <button id="cancelEditButton" class="secondary-button hidden" type="button">Cancel Edit</button>
+                </div>
+            </form>
+            <p id="productMessage" class="message"></p>
+        </section>
+
+        <section class="panel">
+            <div class="section-title-row">
+                <h2>All Products</h2>
+                <span id="productCount" class="pill">0 products</span>
+            </div>
+            <div class="filters">
+                <input id="adminSearch" type="search" placeholder="Search by name or category">
+                <input id="adminMinPrice" type="number" min="0" step="0.01" placeholder="Min price">
+                <input id="adminMaxPrice" type="number" min="0" step="0.01" placeholder="Max price">
+                <button id="adminClearFilters" class="secondary-button" type="button">Clear</button>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="productsTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </section>
+</main>
+
+<script src="js/shared.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
